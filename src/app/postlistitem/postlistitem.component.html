@@ -1,0 +1,22 @@
+<div [ngClass]="loveIts > 0 ? 'my-3 p-3 bg-white rounded shadow-sm border border-success' : 'my-3 p-3 bg-white rounded shadow-sm border border-danger' ">
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125">
+      <span class="d-block">
+        <strong class="h3 text-left"> {{ title }} </strong>
+      </span>
+      {{ content }}
+    </p>
+    <span class="h6 text-right pt-1.2">{{ created_at | date: short }}</span>
+    <div style="margin-top: 40px;">
+      <button
+        type="button"
+        class="btn btn-primary"
+        style="margin-right: 10px;" (click)="onLoveIt()">
+        <i class="far fa-thumbs-up"></i>
+      </button>
+      <button ml-3 type="button" class="btn btn-danger" (click)="onDontLoveIt()">
+        <i class="far fa-thumbs-down"></i>
+      </button>
+    </div>
+  </div>
+</div>
